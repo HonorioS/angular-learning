@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCreateComponent implements OnInit {
 
-  propLegal ="teste"
+  propLegal ="teste" // criando binding de atributo
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  fazerAlgo(): void {
+  fazerAlgo(): void {  // criando binding de evento
     console.log("teste fazendo algo ... ")
   }
 
