@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-product-create',
@@ -7,14 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCreateComponent implements OnInit {
 
-  propLegal ="teste" // criando binding de atributo
-  constructor() { }
+  constructor(private productService: ProductService,
+    private router : Router) { }
 
   ngOnInit(): void {
+    //this.productService.showOnConsole('services works!')
+  //  this.productService.showMessage('operação executado com sucesso')
+  }
+  createProduct():void{
+
+    this.productService.showMessage('Produto criado')
+
   }
 
-  fazerAlgo(): void {  // criando binding de evento
-    console.log("teste fazendo algo ... ")
+  cancel():void{
+
+this.router.navigate(['/products'])
   }
+
+ 
 
 }
